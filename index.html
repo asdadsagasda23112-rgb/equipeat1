@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro de Provas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-brand">
+        <a href="https://discord.gg/QMKkq2bvcM" target="_blank" rel="noreferrer" title="Ir para Discord da Equipe AT">
+          <img src="https://cdn.discordapp.com/attachments/1523166509667713204/1534384174339719168/image-removebg-preview_3.png?ex=6a73ee1e&is=6a729c9e&hm=d78d3062c51759783aa252a178f5d88c09b7a8e05820566e14fcd1f61c173faa&" alt="Logo Equipe AT" class="site-logo" />
+        </a>
+        <div>
+          <h1>Registro de Provas</h1>
+          <p>Cidade América • Equipe AT — Provas com segurança e estilo.</p>
+        </div>
+      </div>
+      <div class="hero-banner">
+        <span class="banner-chip">Banner oficial</span>
+        <span class="banner-chip">Registro seguro</span>
+        <span class="banner-chip">Mídias e provas</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="header-actions">
+          <div>
+            <h2 class="text-3xl font-bold tracking-tight text-white">Quadro de provas</h2>
+            <p class="mt-2 text-sm text-purple-200/80">Registre provas novas rapidamente no painel e visualize todo o histórico.</p>
+          </div>
+          <button id="open-form" class="primary-button inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-fuchsia-500 to-indigo-600 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white shadow-2xl shadow-purple-500/20 transition-transform duration-300 hover:-translate-y-1 hover:shadow-purple-500/30" type="button">Registrar nova prova</button>
+        </div>
+      </section>
+
+      <section class="list-section">
+        <div class="section-header">
+          <h2 class="text-2xl font-semibold text-white">Provas arquivadas</h2>
+          <p class="mt-2 text-sm text-purple-200/80">Todos os registros visíveis e acessíveis rapidamente.</p>
+        </div>
+        <div id="proof-list" class="proof-list"></div>
+      </section>
+    </main>
+
+    <div id="proof-modal" class="modal hidden">
+      <div class="modal-dialog">
+        <div class="modal-header">
+          <div>
+            <h2>Registrar prova</h2>
+            <p>Preencha os campos e salve o registro.</p>
+          </div>
+          <button id="close-modal" class="close-button" type="button" aria-label="Fechar modal">×</button>
+        </div>
+        <form id="proof-form">
+          <label>
+            Motivo
+            <input type="text" name="motive" id="motive" required placeholder="Ex: Entrega de documento" />
+          </label>
+          <label>
+            Descrição
+            <textarea name="description" id="description" required placeholder="Descreva a prova..."></textarea>
+          </label>
+          <label>
+            Link da mídia (opcional)
+            <input type="url" name="mediaLink" id="mediaLink" placeholder="https://..." />
+          </label>
+          <label>
+            Upload de arquivo (imagem ou vídeo)
+            <input type="file" name="mediaFile" id="mediaFile" accept="image/*,video/*" />
+          </label>
+          <div class="actions">
+            <button type="submit">Salvar prova</button>
+            <span class="note">Envie um arquivo ou link para mídia.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
